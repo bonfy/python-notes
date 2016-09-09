@@ -22,11 +22,18 @@ def requests_get(url, **kwargs):
         ('Mozilla/5.0 (Windows; Windows NT 6.1) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46'
          'Safari/536.5')
     )
+
+    # 如果有代理，请把下面的注释去掉
+    # PROXIES = {
+    #     "http": "http://user:password@proxy:port",
+    # }
+
     try:
         r = requests.get(
             url,
             timeout=30,
             headers={'User-Agent': random.choice(USER_AGENTS)},
+            # proxies=PROXIES,
             **kwargs
         )
     except ConnectionError:
