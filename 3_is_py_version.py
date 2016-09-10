@@ -12,6 +12,9 @@ def is_py_version():
     利用 sys.version
     """
     if sys.version < '3':
+        # 通常在这种 python版本小于3的情况下会重设encoding
+        # reload(sys) # Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入
+        # sys.setdefaultencoding('utf-8')
         print("py2")
     else:
         print("py3")
