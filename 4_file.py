@@ -5,18 +5,18 @@
 """
 
 
-def file_open():
+def file_open(filename):
     """
     文件打开
     """
-    with open('file.txt', 'w') as f:
+    with open(filename, 'w') as f:
         f.write("something")
 
 
-def file_open_codec():
+def file_open_codec(filename):
     """
     文件打开 codecs
     """
     import codecs
-    with codecs.open('file.txt', 'w', encoding='utf-8') as f:
+    with codecs.open(filename, 'w', encoding='utf-8') as f:
         f.write("something")
