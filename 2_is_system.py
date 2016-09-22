@@ -11,6 +11,21 @@
 import platform
 
 
+def isPlatForm():
+    """
+    kennethreitz 
+    https://github.com/kennethreitz/legit/tree/develop/legit helpers
+    """
+    # import platform
+    # 后面就是 if is_osx ...
+    
+    _platform = platform.system().lower()
+    
+    is_osx = (_platform == 'darwin')
+    is_win = (_platform == 'windows')
+    is_lin = (_platform == 'linux')
+
+
 def TestPlatform():
     print("----------Operation System--------------------------")
 
