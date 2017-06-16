@@ -1,6 +1,6 @@
 # Web Scraping with Python
 
-这本书的中文译本名称为 《Python 网络数据采集》,作者 Ryan Mitchell， 据说 2017.11 将有2rd Edition
+这本书的中文译本名称为 《Python 网络数据采集》,作者 Ryan Mitchell， 据说 2017.11 将有2nd Edition
 
 ## 笔记
 
@@ -16,7 +16,8 @@
 import requests
 params = {'username': 'Ryan', 'password': 'password'}
 
-r = requests.post("http://pythonscraping.com/pages/cookies/welcome.php", params) print("Cookie is set to:")
+r = requests.post("http://pythonscraping.com/pages/cookies/welcome.php", params)
+print("Cookie is set to:")
 print(r.cookies.get_dict())
 print("-----------")
 print("Going to profile page...")
@@ -31,7 +32,8 @@ print(r.text)
 import requests
 session = requests.Session()
 params = {'username': 'username', 'password': 'password'}
-s = session.post("http://pythonscraping.com/pages/cookies/welcome.php", params) print("Cookie is set to:")
+s = session.post("http://pythonscraping.com/pages/cookies/welcome.php", params)
+print("Cookie is set to:")
 print(s.cookies.get_dict())
 print("-----------")
 print("Going to profile page...")
@@ -44,14 +46,14 @@ s = session.get("http://pythonscraping.com/pages/cookies/profile.php") print(s.t
 
 HTTP 接入认证
 
-虽然这看着像是一个普通的 POST 请求，但是有一个 HTTPBasicAuth 对象作为 auth 参数传 递到请求中。显示的结果将是用户名和密码验证成功的页面(如果验证失败，就是一个拒 绝接入页面)。
+虽然这看着像是一个普通的 POST 请求，但是有一个 HTTPBasicAuth 对象作为 auth 参数传 递到请求中。显示的结果将是用户名和密码验证成功的页面(如果验证失败，就是一个拒绝接入页面)。
 ```python
 import requests
 from requests.auth import AuthBase
 from requests.auth import HTTPBasicAuth
-     auth = HTTPBasicAuth('ryan', 'password')
-     r = requests.post(url="http://pythonscraping.com/pages/auth/login.php", auth=
-auth)
+
+auth = HTTPBasicAuth('ryan', 'password')
+r = requests.post(url="http://pythonscraping.com/pages/auth/login.php", auth=auth)
 print(r.text)
 ```
 
